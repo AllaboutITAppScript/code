@@ -1,6 +1,6 @@
 /*พัฒนาโดย:นายธีรพงศ์ พรหมวัง
 ช่อง Youtube: ครบเครื่อง เรื่องไอที
-@AllaboutITAppScript
+// @AllaboutITAppScript
 */
 
 function doGet() {
