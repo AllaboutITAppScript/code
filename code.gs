@@ -19,7 +19,7 @@ function savedata(obj) {
   //---------------------------------------------------------------------------------------------
   
   //สร้างลำดับอัตโนมัติ
-  const uniqueIds = data.getRange(2,1,data.getLastRow()-1,1).getValues()
+  const uniqueIds = data.getRange(1,1,data.getLastRow(),1).getValues()
   var maxNum = 0
   uniqueIds.forEach( r => {
     maxNum = r[0] > maxNum ? r[0] : maxNum
