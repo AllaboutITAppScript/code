@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.ckeditor.com/4.20.1/standard-all/ckeditor.js"></script>
+  <link rel="stylesheet" href="https://www.ninenik.com/js/jquery.datetimepicker.css">
+  <!-- LineSeed Fonts -->
+<link href="https://cdn.jsdelivr.net/gh/maketline/goodday/font/stylesheet.min.css" rel="stylesheet">
+  <style>
+    body,h5{
+       font-family: 'line_seed_sans_th';
+       font-weight: bold;    /*กรณีอยากได้ตัวหนาเปิดตัวนี้มาใช้*/
+  }
+	a {
+        text-decoration: none;
+  }
+  </style>
+
+  <title>บันทึกข้อมูล</title>
+</head>
+
+<body>
+  <div class="container mt-2">
+    <div class="card">
+      <div class="card-body">
+        <div class="alert alert-primary mt-2" role="alert">
+         บันทึกข้อมูลนักเรียน
+        </div>
+        <form class="row g-3" id="myFrom" onsubmit="save(this)">
+          <div class="col-md-6">
+            <label for="inputname" class="form-label">ชื่อ</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="ชื่อสกุลของท่าน" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputemail" class="form-label">วันเดือนปีเกิด</label>
+            <input type="text" class="form-control" id="mydateth" name="mydateth"  required>
+          </div>
+           <div class="col-md-6">
+            <label for="inputname" class="form-label">อายุ</label>
+            <input type="text" class="form-control" id="age" name="age" placeholder="คำนวณอัตโนมัติ" readonly>
+          </div>
+          <div class="col-md-6">
+            <label for="inputemail" class="form-label">ชั้น</label>
+             <select class="form-select" aria-label="เลือกเรื่องติดต่อ" id="classroom" name="classroom" required>
+          <option selected>เลือกชั้น</option>
+          <option value="ป.1">ป.1</option>
+          <option value="ป.2">ป.2</option>
+          <option value="ป.3">ป.3</option>
+          <option value="ป.4">ป.4</option>
+          <option value="ป.5">ป.5</option>
+          <option value="ป.6">ป.6</option>
+        </select>
+          </div>
+            <div class="col-12">
+            <label for="inputdate" class="form-label">หมายเหตุ</label>
+            <textarea class="form-control" id="memo" name="memo" rows="3"  placeholder="ระบุรายละเอียดของท่าน" required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12 mb-2">
+              <label for="inputfile1">แนบไฟล์เอกสาร</label>
+              <input type="file" class="form-control" id="file" name="file" required>
+              <div class="mt-2"><img id="image1" width="150"></div>
+              <!--แสดงภาพก่อนupload -->
+            </div>
+          </div>
+          <div class="d-grid gap-2 col-12 text-center">
+            <button type="submit" id="btnsend" class="btn btn-primary">บันทึกข้อมูล</button>
+            <!-- แสดงปุ่มโหลดหลับกดปุ่มบันทึก -->
+            <button class="btn btn-primary"  id="btnspinner"  type="button" disabled style="display:none">
+  <span class="spinner-grow spinner-grow-sm"role="status" aria-hidden="true"></span>
+ กำลังส่งข้อมูล...
+</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- คำสั่งinclud ไฟล์มา -->
+    <?!=  HtmlService.createHtmlOutputFromFile('script').getContent() ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
