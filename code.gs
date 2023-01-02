@@ -1,3 +1,8 @@
+/*พัฒนาโดย:นายธีรพงศ์ พรหมวัง
+ช่อง Youtube: ครบเครื่อง เรื่องไอที
+@AllaboutITAppScript
+*/
+
 function doGet() {
   return HtmlService.createTemplateFromFile('index').evaluate()
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
